@@ -8,11 +8,16 @@ public class TennisCoach implements Coach {
 	
 	private FortuneService fortuneService;
 	
-	@Autowired //since spring 4.3 optional if we have only one constructor
+	/*@Autowired //since spring 4.3 optional if we have only one constructor
 	public TennisCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
-	}
+	}*/
 
+	@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
+	
 	public String getDailyWorkout() {
 		return "Practice backend volley";
 	}
